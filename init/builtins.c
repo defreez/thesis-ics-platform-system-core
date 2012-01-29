@@ -370,8 +370,8 @@ int do_mount(int nargs, char **args)
         if (wait)
             wait_for_file(source, COMMAND_RETRY_TIMEOUT);
 
-	if (!strcmp(target, ECRYPTFS_MNT_POINT))
-		options = property_get("vold.ecryptfs_options");
+	if (!strcmp(system, "ecryptfs"))
+		options = (char*)property_get("vold.ecryptfs_options");
 
         if (mount(source, target, system, flags, options) < 0) {
             /* If this fails, it may be an encrypted filesystem
