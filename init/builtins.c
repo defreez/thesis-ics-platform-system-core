@@ -278,7 +278,6 @@ static struct {
 };
 
 #define DATA_MNT_POINT "/data"
-#define ECRYPTFS_MNT_POINT "/data/top"
 
 /* mount <type> <device> <path> <flags ...> <options> */
 int do_mount(int nargs, char **args)
